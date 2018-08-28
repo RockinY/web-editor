@@ -1,6 +1,15 @@
 import React, { Component } from 'react'
 import PluginEditor from 'draft-js-plugins-editor'
 
+/* Linkify */
+import createLinkifyPlugin from '../plugins/linkify'
+const linkifyPlugin = createLinkifyPlugin()
+
+/* All plugins */
+const plugins = [
+  linkifyPlugin
+]
+
 class Editor extends Component {
   onChange = (editorState) => {
     this.props.onChange(editorState)
@@ -12,6 +21,7 @@ class Editor extends Component {
         <PluginEditor
           editorState={this.props.editorState}
           onChange={this.onChange}
+          plugins={plugins}
         />
       </div>
     )
