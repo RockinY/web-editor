@@ -4,7 +4,8 @@
   "description": "Cool draftjs editor for the web",
   "main": "lib/index.js",
   "scripts": {
-    "dev": "cd demo && yarn start"
+    "build": "babel src/ -d lib/",
+    "dev": "yarn link && cd demo && yarn link draftjs-web-editor && yarn start"
   },
   "keywords": [
     "draft-js",
@@ -24,5 +25,13 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "styled-components": "^3.4.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0"
   }
 }
