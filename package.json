@@ -1,0 +1,21 @@
+{
+  "name": "draftjs-web-editor",
+  "version": "0.1.0",
+  "description": "Cool draftjs editor for the web",
+  "main": "lib/index.js",
+  "scripts": {
+    "dev": "cd demo && yarn start"
+  },
+  "keywords": [
+    "draft-js",
+    "draft-js-plugins",
+    "draftjs plugins",
+    "draftjs",
+    "draft.js",
+    "editor",
+    "richtext",
+    "react"
+  ],
+  "author": "BranLiang",
+  "license": "MIT"
+}
