@@ -8,6 +8,7 @@ const baseButton = css`
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  border: 0;
   font-weight: 600;
   white-space: nowrap;
   word-space: keep-all;
