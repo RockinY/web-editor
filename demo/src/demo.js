@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import rawJSON from './raw'
-import Editor, { fromJSON } from 'draftjs-web-editor'
+import Editor, { fromJSON, toJSON } from 'draftjs-web-editor'
 
 export default class Demo extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ export default class Demo extends Component {
     this.setState({
       editorState: editorState
     })
-    console.log(editorState)
+    console.log(toJSON(editorState))
   }
 
   render() {

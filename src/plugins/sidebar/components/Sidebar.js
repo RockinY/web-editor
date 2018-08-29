@@ -2,14 +2,19 @@ import React from 'react'
 import DraftOffsetKey from 'draft-js/lib/DraftOffsetKey'
 import {
   SidebarWrapper,
-  Expander
+  Expander,
+  Action
 } from './styles'
 import {
   IconButton
 } from '../../../components/Button'
+import MediaInput from './MediaInput'
+import addImageFn from '../../image/addImage'
 
 type Props = {
-  store: Object
+  store: Object,
+  editorState: any,
+  onChange: Function
 };
 
 type ToolbarPosition = {
@@ -65,6 +70,35 @@ class Sidebar extends React.Component<Props, State> {
     this.setState({ inserting: !this.state.inserting })
   }
 
+  addImages = (files: FileList) => {
+    const { addImage } = this.state;
+    const { state, onChange } = this.props;
+    // Add images to editorState
+    // eslint-disable-next-line
+    for (var i = 0, file; (file = files[i]); i++) {
+      onChange(addImage(state, window.URL.createObjectURL(file), { file }));
+    }
+  };
+
+  addImage = (e) => {
+    this.addImages(e.target.files)
+    this.closeSidebar()
+  }
+
+  addImages = (files) => {
+    const { editorState, onChange } = this.props;
+    // Add images to editorState
+    for (var i = 0, file; (file = files[i]); i++) {
+      onChange(addImageFn(editorState, window.URL.createObjectURL(file), { file }));
+    }
+  };
+
+  closeSidebar = () => {
+    this.setState({
+      inserting: false
+    })
+  }
+
   render () {
     const { store } = this.props
     const { position, inserting } = this.state
@@ -76,6 +110,13 @@ class Sidebar extends React.Component<Props, State> {
             glyph={'inserter'}
             onClick={this.toggleSidebar}
           />
+          <Action>
+            <MediaInput
+              onChange={this.addImage}
+              multiple
+              tipLocation={'right'}
+            />
+          </Action>
         </Expander>
       </SidebarWrapper>
     )

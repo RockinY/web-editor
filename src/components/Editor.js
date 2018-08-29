@@ -10,10 +10,15 @@ import createSidebarPlugin from '../plugins/sidebar'
 const sidebarPlugin = createSidebarPlugin()
 const { Sidebar } = sidebarPlugin
 
+/* Image */
+import createImagePlugin from '../plugins/image'
+const imagePlugin = createImagePlugin()
+
 /* All plugins */
 const plugins = [
   linkifyPlugin,
-  sidebarPlugin
+  sidebarPlugin,
+  imagePlugin
 ]
 
 class Editor extends Component {
@@ -35,7 +40,10 @@ class Editor extends Component {
           plugins={plugins}
           ref={this.editor.current}
         />
-        <Sidebar />
+        <Sidebar
+          onChange={this.onChange}
+          editorState={this.props.editorState}
+        />
       </div>
     )
   }

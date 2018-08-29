@@ -59,3 +59,28 @@ export const Expander = styled.div`
     `
   }
 `
+
+export const MediaInput = styled.input`
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+`;
+
+export const MediaLabel = styled.label`
+  border: none;
+  outline: 0;
+  display: inline-block;
+  background: transparent;
+  transition: color 0.3s ease-out;
+  color: #A3AFBF;
+  height: 32px;
+  width: 32px;
+
+  &:hover {
+    cursor: pointer;
+    color: #57D9A3;
+  }
+`;
