@@ -15,6 +15,7 @@ type Props = {
 type ToolbarPosition = {
   top?: number,
   left?: number,
+  transform?: string
 };
 
 type State = {
@@ -25,7 +26,9 @@ type State = {
 class Sidebar extends React.Component<Props, State> {
   state = {
     inserting: false,
-    position: {}
+    position: {
+      transform: 'scale(0)'
+    }
   }
 
   componentDidMount () {
@@ -51,7 +54,8 @@ class Sidebar extends React.Component<Props, State> {
       this.setState({
         position: {
           top: node.offsetTop,
-          left: node.offsetLeft - 48
+          left: node.offsetLeft - 48,
+          transform: 'scale(1)'
         }
       })
     }, 0)
