@@ -41,7 +41,7 @@ export const ActiveOverlay = styled.span`
   transition: opacity 0.1s ease-in-out;
 `;
 
-const Img = styled.img`
+export const Img = styled.img`
   ${props =>
     props.active &&
     css`

@@ -7,8 +7,9 @@ export default (config = {}) => {
   if (config.decorator) {
     Image = config.decorator(Image);
   }
+  
   return {
-    blockRenderFn: (block, { getEditorState }) => {
+    blockRendererFn: (block, { getEditorState }) => {
       if (block.getType() === 'atomic') {
         const contentState = getEditorState().getCurrentContent();
         const entity = block.getEntityAt(0);
