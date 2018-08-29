@@ -47,12 +47,11 @@ class Sidebar extends React.Component<Props, State> {
       if (!node) {
         return
       }
-      const top = node.getBoundingClientRect().top
-      const editor = this.props.store.getItem('getEditorRef')().refs.editor
+
       this.setState({
         position: {
-          top: (top + window.scrollY),
-          left: editor.getBoundingClientRect().left - 48
+          top: node.offsetTop,
+          left: node.offsetLeft - 48
         }
       })
     }, 0)
@@ -78,3 +77,5 @@ class Sidebar extends React.Component<Props, State> {
     )
   }
 }
+
+export default Sidebar

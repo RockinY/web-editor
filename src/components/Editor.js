@@ -5,12 +5,23 @@ import PluginEditor from 'draft-js-plugins-editor'
 import createLinkifyPlugin from '../plugins/linkify'
 const linkifyPlugin = createLinkifyPlugin()
 
+/* Sidebar */
+import createSidebarPlugin from '../plugins/sidebar'
+const sidebarPlugin = createSidebarPlugin()
+const { Sidebar } = sidebarPlugin
+
 /* All plugins */
 const plugins = [
-  linkifyPlugin
+  linkifyPlugin,
+  sidebarPlugin
 ]
 
 class Editor extends Component {
+  constructor(props) {
+    super(props)
+    this.editor = React.createRef()
+  }
+
   onChange = (editorState) => {
     this.props.onChange(editorState)
   }
@@ -22,7 +33,9 @@ class Editor extends Component {
           editorState={this.props.editorState}
           onChange={this.onChange}
           plugins={plugins}
+          ref={this.editor.current}
         />
+        <Sidebar />
       </div>
     )
   }

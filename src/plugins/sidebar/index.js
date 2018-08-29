@@ -1,5 +1,7 @@
 // @flow
+import React from 'react'
 import createStore from '../createStore'
+import decorateComponentWithProps from 'decorate-component-with-props'
 import Sidebar from './components/Sidebar'
 
 export default (config = {}) => {
@@ -18,6 +20,6 @@ export default (config = {}) => {
       store.updateItem('editorState', editorState)
       return editorState
     },
-    Sidebar: <Sidebar store={store} />
+    Sidebar: decorateComponentWithProps(Sidebar, { store })
   }
 }

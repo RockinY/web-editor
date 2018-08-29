@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import styled, { css } from 'styled-components'
-import Tooltip from './tooltip'
+import Tooltip from './Tooltip'
 
 type Props = {
   glyph: string,
