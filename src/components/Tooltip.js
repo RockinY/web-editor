@@ -1,4 +1,5 @@
 import { css } from 'styled-components'
+import 'css.escape'
 
 const returnTooltip = props => {
   switch (props.tipLocation) {
@@ -157,7 +158,7 @@ export default props => css`
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(23, 43, 77, 0.25);
     background: #172B4D;
-    color: #172B4D;
+    color: #FFFFFF;
   }
 
   ${props.tipText ? returnTooltip(props) : ''};
