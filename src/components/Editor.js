@@ -14,11 +14,16 @@ const { Sidebar } = sidebarPlugin
 import createImagePlugin from '../plugins/image'
 const imagePlugin = createImagePlugin()
 
+/* Toolbar */
+import cerateToolbarPlugin from '../plugins/toolbar'
+const toolbarPlugin = cerateToolbarPlugin()
+
 /* All plugins */
 const plugins = [
   linkifyPlugin,
   sidebarPlugin,
-  imagePlugin
+  imagePlugin,
+  toolbarPlugin
 ]
 
 class Editor extends Component {

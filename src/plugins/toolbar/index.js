@@ -1,14 +1,24 @@
 import createStore from '../createStore'
 import decorateComponentWithProps from 'decorate-component-with-props'
 import Toolbar from './components/Toolbar'
+import {
+  BoldButton
+} from '../button'
 
 export default (config = {}) => {
   const store = createStore({
     isVisible: false
   })
 
+  const {
+    structure = [
+      BoldButton
+    ]
+  } = config
+
   const toolbarProps = {
-    store
+    store,
+    structure
   }
 
   return {
