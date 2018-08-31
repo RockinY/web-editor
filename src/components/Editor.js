@@ -17,6 +17,7 @@ const imagePlugin = createImagePlugin()
 /* Toolbar */
 import cerateToolbarPlugin from '../plugins/toolbar'
 const toolbarPlugin = cerateToolbarPlugin()
+const { Toolbar } = toolbarPlugin
 
 /* All plugins */
 const plugins = [
@@ -49,6 +50,7 @@ class Editor extends Component {
           onChange={this.onChange}
           editorState={this.props.editorState}
         />
+        <Toolbar />
       </div>
     )
   }

@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { RichUtils } from 'draft-js'
+import {
+  IconButton
+} from '../../../components/Button'
 
-export default ({ style, Button }) => (
+export default ({ style, icon }) => (
   class InlineStyleButton extends Component {
     toggleStyle = (event) => {
       event.preventDefault()
@@ -13,15 +16,16 @@ export default ({ style, Button }) => (
       )
     }
 
-    preventBubblingUp = (event) => { event.preventDefault(); }
-
+    preventBubblingUp = (event) => { event.preventDefault(); }   
+    
     render () {
       return (
         <div
           onMouseDown={this.preventBubblingUp}
         >
-          <Button
+          <IconButton
             onClick={this.toggleStyle}
+            glyph={icon}
           />
         </div>
       ) 
