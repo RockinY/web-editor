@@ -4,7 +4,9 @@ import Toolbar from './components/Toolbar'
 import {
   BoldButton,
   ItalicButton,
-  UnderlineButton
+  UnderlineButton,
+  BlockCodeButton,
+  BlockquoteButton
 } from '../button'
 
 export default (config = {}) => {
@@ -16,7 +18,9 @@ export default (config = {}) => {
     structure = [
       BoldButton,
       ItalicButton,
-      UnderlineButton
+      UnderlineButton,
+      BlockCodeButton,
+      BlockquoteButton
     ]
   } = config
 
