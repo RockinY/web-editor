@@ -3,7 +3,8 @@ import decorateComponentWithProps from 'decorate-component-with-props'
 import Toolbar from './components/Toolbar'
 import {
   BoldButton,
-  ItalicButton
+  ItalicButton,
+  UnderlineButton
 } from '../button'
 
 export default (config = {}) => {
@@ -14,7 +15,8 @@ export default (config = {}) => {
   const {
     structure = [
       BoldButton,
-      ItalicButton
+      ItalicButton,
+      UnderlineButton
     ]
   } = config
 
