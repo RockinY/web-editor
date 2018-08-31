@@ -2,7 +2,8 @@ import createStore from '../createStore'
 import decorateComponentWithProps from 'decorate-component-with-props'
 import Toolbar from './components/Toolbar'
 import {
-  BoldButton
+  BoldButton,
+  ItalicButton
 } from '../button'
 
 export default (config = {}) => {
@@ -12,7 +13,8 @@ export default (config = {}) => {
 
   const {
     structure = [
-      BoldButton
+      BoldButton,
+      ItalicButton
     ]
   } = config
 
