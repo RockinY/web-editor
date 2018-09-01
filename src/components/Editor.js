@@ -44,6 +44,10 @@ const prismPlugin = createPrismPlugin({
 import createCodeEditorPlugin from '../plugins/code'
 const codePlugin = createCodeEditorPlugin()
 
+/* Markdown */
+import createMarkdownPlugin from 'draft-js-markdown-plugin'
+const markdownPlugin = createMarkdownPlugin()
+
 /* All plugins */
 const plugins = [
   linkifyPlugin,
@@ -51,7 +55,8 @@ const plugins = [
   imagePlugin,
   toolbarPlugin,
   prismPlugin,
-  codePlugin
+  codePlugin,
+  markdownPlugin
 ]
 
 class Editor extends Component {
