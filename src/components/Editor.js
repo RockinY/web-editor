@@ -1,5 +1,17 @@
 import React, { Component } from 'react'
 import PluginEditor from 'draft-js-plugins-editor'
+import Prism from 'prismjs'
+import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-scala';
+import 'prismjs/components/prism-go';
+import 'prismjs/components/prism-sql';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
+import 'prismjs/components/prism-kotlin';
+import 'prismjs/components/prism-perl';
+import 'prismjs/components/prism-ruby';
+import 'prismjs/components/prism-swift';
 
 /* Linkify */
 import createLinkifyPlugin from '../plugins/linkify'
@@ -15,19 +27,31 @@ import createImagePlugin from '../plugins/image'
 const imagePlugin = createImagePlugin()
 
 /* Toolbar */
-import cerateToolbarPlugin from '../plugins/toolbar'
-const toolbarPlugin = cerateToolbarPlugin()
+import createToolbarPlugin from '../plugins/toolbar'
+const toolbarPlugin = createToolbarPlugin()
 const { Toolbar } = toolbarPlugin
 
 /* Coloe */
 import { colorStyleFn } from '../plugins/colorPicker'
+
+/* Prism */
+import createPrismPlugin from '../plugins/prism'
+const prismPlugin = createPrismPlugin({
+  prism: Prism
+})
+
+/* Code editor */
+import createCodeEditorPlugin from '../plugins/code'
+const codePlugin = createCodeEditorPlugin()
 
 /* All plugins */
 const plugins = [
   linkifyPlugin,
   sidebarPlugin,
   imagePlugin,
-  toolbarPlugin
+  toolbarPlugin,
+  prismPlugin,
+  codePlugin
 ]
 
 class Editor extends Component {
