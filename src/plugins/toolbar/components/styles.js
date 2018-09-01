@@ -5,7 +5,6 @@ export const ToolbarWrapper = styled.div`
   left: 50%;
   transform: translate(-50%) scale(1);
   position: absolute;
-  padding: 4px;
   background-color: #57D9A3;
   border-radius: 12px;
   z-index: 6000;

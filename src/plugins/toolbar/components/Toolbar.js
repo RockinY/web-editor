@@ -21,7 +21,7 @@ class Toolbar extends Component {
   }
 
   onVisibilityChanged = (isVisible) => {
-    const toolbarHeightOffset = 55
+    const toolbarHeightOffset = 40
     const selectionRect = isVisible ? getVisibleSelectionRect(window) : undefined
 
     if (selectionRect === undefined || selectionRect === null) return
