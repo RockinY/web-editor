@@ -6,10 +6,8 @@ export const ToolbarWrapper = styled.div`
   transform: translate(-50%) scale(1);
   position: absolute;
   background-color: #57D9A3;
-  border-radius: 12px;
   z-index: 6000;
   box-sizing: border-box;
-  overflow: hidden;
 
   button,
   button:hover {
