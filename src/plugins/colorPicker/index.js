@@ -9,9 +9,9 @@ import Picker from './Picker'
 
 const colorStyleFn = (style) => {
   const output = {};
-  const re = new RegExp('color-(#[0-9a-fA-F]{3,6})');
+  const re = new RegExp('color-([0-9a-fA-F]{3,6})');
   if (re.test(style)) {
-    output[style] = re.exec(style)[1]
+    output['color'] = `#${re.exec(style)[1]}`
   }
   return output
 }
