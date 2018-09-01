@@ -19,6 +19,9 @@ import cerateToolbarPlugin from '../plugins/toolbar'
 const toolbarPlugin = cerateToolbarPlugin()
 const { Toolbar } = toolbarPlugin
 
+/* Coloe */
+import { colorStyleFn } from '../plugins/colorPicker'
+
 /* All plugins */
 const plugins = [
   linkifyPlugin,
@@ -43,6 +46,7 @@ class Editor extends Component {
         <PluginEditor
           editorState={this.props.editorState}
           onChange={this.onChange}
+          customStyleFn={colorStyleFn}
           plugins={plugins}
           ref={this.editor.current}
         />

@@ -1,12 +1,14 @@
 import createStore from '../createStore'
 import decorateComponentWithProps from 'decorate-component-with-props'
 import Toolbar from './components/Toolbar'
+import getModalByType from './getModalByType'
 import {
   BoldButton,
   ItalicButton,
   UnderlineButton,
   BlockCodeButton,
-  BlockquoteButton
+  BlockquoteButton,
+  TextColorButton
 } from '../button'
 
 export default (config = {}) => {
@@ -20,13 +22,15 @@ export default (config = {}) => {
       ItalicButton,
       UnderlineButton,
       BlockCodeButton,
-      BlockquoteButton
+      BlockquoteButton,
+      TextColorButton
     ]
   } = config
 
   const toolbarProps = {
     store,
-    structure
+    structure,
+    getModalByType
   }
 
   return {

@@ -9,8 +9,10 @@ class Picker extends React.Component {
   render () {
     return (
       <BlockPicker
-        onChange={handleChange}
+        onChange={this.handleChange}
       />
     )
   }
 }
+
+export default Picker
