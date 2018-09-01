@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import {
   IconButton
 } from '../../../components/Button'
+import {
+  ButtonWrapper
+} from '../styles'
 
 export default ({ type, icon }) => (
   class embedButton extends Component {
@@ -15,14 +18,14 @@ export default ({ type, icon }) => (
 
     render () {
       return (
-        <div
+        <ButtonWrapper
           onMouseDown={this.preventBubblingUp}
         >
           <IconButton
             onClick={this.onClick}
             glyph={icon}
           />
-        </div>
+        </ButtonWrapper>
 
       )
     }

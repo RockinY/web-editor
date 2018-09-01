@@ -3,6 +3,9 @@ import { RichUtils } from 'draft-js'
 import {
   IconButton
 } from '../../../components/Button'
+import {
+  ButtonWrapper
+} from '../styles'
 
 export default ({ blockType, icon }) => (
   class InlineStyleButton extends Component {
@@ -20,14 +23,14 @@ export default ({ blockType, icon }) => (
     
     render () {
       return (
-        <div
+        <ButtonWrapper
           onMouseDown={this.preventBubblingUp}
         >
           <IconButton
             onClick={this.toggleStyle}
             glyph={icon}
           />
-        </div>
+        </ButtonWrapper>
       ) 
     }
   }
