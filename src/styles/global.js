@@ -110,13 +110,13 @@ injectGlobal`
     transition: opacity 250ms ease-in;
   }
 
-  .markdown {
+  .draftjs-web-editor {
     font-size: 16px;
     line-height: 24px;
     color: #16171a;
   }
 
-  .markdown p {
+  .draftjs-web-editor p {
     color: inherit;
     font-size: 16px;
     line-height: 1.5;
@@ -124,15 +124,15 @@ injectGlobal`
     display: block;
   }
 
-  .markdown p + p {
+  .draftjs-web-editor p + p {
     margin-top: 16px;
   }
 
-  .markdown > *:first-of-type {
+  .draftjs-web-editor > *:first-of-type {
     margin-top: 16px;
   }
 
-  .markdown img {
+  .draftjs-web-editor img {
     margin-top: 16px;
     max-width: 100%;
     display: inline;
@@ -142,32 +142,32 @@ injectGlobal`
     margin: 12px 0;
   }
 
-  .markdown img:hover {
+  .draftjs-web-editor img:hover {
     cursor: pointer;
     transition: box-shadow 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 
-  .markdown em {
+  .draftjs-web-editor em {
     color: inherit;
     font-size: inherit;
     font-style: italic;
   }
 
-  .markdown strong {
+  .draftjs-web-editor strong {
     color: inherit;
     font-size: inherit;
     font-weight: 700;
   }
 
-  .markdown ul,
-  .markdown ol {
+  .draftjs-web-editor ul,
+  .draftjs-web-editor ol {
     color: inherit;
     margin: 8px 0;
     margin-left: 16px;
   }
 
-  .markdown li {
+  .draftjs-web-editor li {
     color: inherit;
     font-size: 16px;
     margin-bottom: 4px;
@@ -175,7 +175,7 @@ injectGlobal`
     font-weight: 400;
   }
 
-  .markdown blockquote {
+  .draftjs-web-editor blockquote {
     color: #828c99;
     border-left: 4px solid #36B37E;
     padding: 4px 8px 4px 16px;
@@ -186,11 +186,11 @@ injectGlobal`
     margin: 16px 0;
   }
 
-  .markdown blockquote p {
+  .draftjs-web-editor blockquote p {
     margin-top: 0;
   }
 
-  .markdown a {
+  .draftjs-web-editor a {
     color: #57D9A3;
     font-weight: 500;
     text-decoration: none;
@@ -199,16 +199,16 @@ injectGlobal`
     line-height: inherit;
   }
 
-  .markdown a:hover {
+  .draftjs-web-editor a:hover {
     text-decoration: underline;
   }
 
-  .markdown a:visited {
+  .draftjs-web-editor a:visited {
     opacity: 0.6;
     transition: opacity 0.2s ease-in;
   }
 
-  .markdown code {
+  .draftjs-web-editor code {
     font-family: 'Input Mono', 'Menlo', 'Inconsolata', 'Roboto Mono', monospace;
     font-weight: 500;
     font-size: 14px;
@@ -222,41 +222,41 @@ injectGlobal`
     margin-bottom: 16px;
   }
 
-  .markdown pre {
+  .draftjs-web-editor pre {
     margin: 16px 0;
     display: block;
   }
 
-  .markdown pre code {
+  .draftjs-web-editor pre code {
     padding: 8px 16px;
     display: block;
     white-space: pre-wrap;
     position: relative;
   }
 
-  .markdown div[data-block='true'] {
+  .draftjs-web-editor div[data-block='true'] {
     margin-top: 12px;
   }
 
-  .markdown div[data-block='true']:first-of-type {
+  .draftjs-web-editor div[data-block='true']:first-of-type {
     margin-top: 0;
   }
 
-  .markdown span[data-text='true'] {
+  .draftjs-web-editor span[data-text='true'] {
     line-height: 1.4;
   }
 
-  .markdown code span {
+  .draftjs-web-editor code span {
     max-width: 100%;
     white-space: pre-wrap;
     word-break: break-word;
   }
 
-  .markdown iframe {
+  .draftjs-web-editor iframe {
     margin: 1rem 0;
   }
 
-  .markdown hr {
+  .draftjs-web-editor hr {
     width: 100%;
     height: 1px;
     background: #dfe7ef;
@@ -264,7 +264,7 @@ injectGlobal`
     margin: 32px 0;
   }
 
-  .markdown h1 {
+  .draftjs-web-editor h1 {
     font-size: 24px;
     line-height: 40px;
     border-bottom: 1px solid #dfe7ef;
@@ -273,7 +273,7 @@ injectGlobal`
     margin-bottom: 8px;
   }
 
-  .markdown h2 {
+  .draftjs-web-editor h2 {
     font-size: 20px;
     line-height: 32px;
     font-weight: 700;
@@ -281,7 +281,7 @@ injectGlobal`
     margin-bottom: 8px;
   }
 
-  .markdown h3 {
+  .draftjs-web-editor h3 {
     font-size: 18px;
     line-height: 28px;
     font-weight: 700;
@@ -289,7 +289,7 @@ injectGlobal`
     margin-bottom: 8px;
   }
 
-  .markdown h4 {
+  .draftjs-web-editor h4 {
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
@@ -299,7 +299,7 @@ injectGlobal`
     font-variant: small-caps;
   }
 
-  .markdown h5 {
+  .draftjs-web-editor h5 {
     font-size: 14px;
     line-height: 20px;
     font-weight: 700;
@@ -309,7 +309,7 @@ injectGlobal`
     font-variant: small-caps;
   }
 
-  .markdown h6 {
+  .draftjs-web-editor h6 {
     font-size: 12px;
     line-height: 16px;
     font-weight: 700;
