@@ -56,10 +56,20 @@ class Sidebar extends React.Component<Props, State> {
         return
       }
 
+      const editorRef = this.props.store.getItem('getEditorRef')();
+      if (!editorRef) return;
+
+      // this keeps backwards-compatibility with react 15
+      let editorRoot = editorRef.refs && editorRef.refs.editor
+        ? editorRef.refs.editor : editorRef.editor;
+      while (editorRoot.className.indexOf('DraftEditor-root') === -1) {
+        editorRoot = editorRoot.parentNode;
+      }
+
       this.setState({
         position: {
-          top: node.offsetTop,
-          left: node.offsetLeft - 48,
+          top: node.offsetTop + editorRoot.offsetTop,
+          left: node.offsetLeft + 18,
           transform: 'scale(1)'
         }
       })
