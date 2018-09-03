@@ -1,5 +1,5 @@
 import React from 'react'
-import { BlockPicker } from 'react-color'
+import { TwitterPicker } from 'react-color'
 
 class Picker extends React.Component {
   handleChange = (color) => {
@@ -8,7 +8,7 @@ class Picker extends React.Component {
 
   render () {
     return (
-      <BlockPicker
+      <TwitterPicker
         onChange={this.handleChange}
       />
     )

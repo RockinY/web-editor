@@ -31,7 +31,7 @@ import createToolbarPlugin from '../plugins/toolbar'
 const toolbarPlugin = createToolbarPlugin()
 const { Toolbar } = toolbarPlugin
 
-/* Coloe */
+/* Color */
 import { colorStyleFn } from '../plugins/colorPicker'
 
 /* Prism */

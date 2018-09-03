@@ -6,10 +6,12 @@ export default class extends Component {
   setColor = (color) => {
     const editorState = this.props.getEditorState()
     const currentStyle = editorState.getCurrentInlineStyle()
-    if (!currentStyle.has(color)) {
-      const safeName = color.replace('#', '')
+    const safeName = color.replace('#', '')
+    const colorName = `color-${safeName}`
+    
+    if (!currentStyle.has(colorName)) {
       this.props.setEditorState(
-        RichUtils.toggleInlineStyle(editorState, `color-${safeName}`)
+        RichUtils.toggleInlineStyle(editorState, colorName)
       )
       this.props.closeModal()
     }

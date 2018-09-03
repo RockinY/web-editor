@@ -7,12 +7,15 @@
  */
 import Picker from './Picker'
 
-const colorStyleFn = (style) => {
+const colorStyleFn = (styles) => {
   const output = {};
   const re = new RegExp('color-([0-9a-fA-F]{3,6})');
+  const style = styles.filter(v => v.startsWith('color')).last()
+  
   if (re.test(style)) {
     output['color'] = `#${re.exec(style)[1]}`
   }
+  
   return output
 }
 
