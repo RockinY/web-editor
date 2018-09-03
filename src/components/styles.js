@@ -60,3 +60,14 @@ export const StyledIconButton = styled.button`
     opacity: 1;
   }
 `
+
+export const customStyleMap = {
+  'code-block': {
+    border: '1px solid #DFE7EF',
+    borderRadius: '4px',
+    backgroundColor: '#F5F8FC',
+    padding: '1px 4px',
+    fontFamily: 'monospace',
+    color: '#E2197A',
+  },
+};

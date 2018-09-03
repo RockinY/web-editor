@@ -12,6 +12,9 @@ import 'prismjs/components/prism-kotlin';
 import 'prismjs/components/prism-perl';
 import 'prismjs/components/prism-ruby';
 import 'prismjs/components/prism-swift';
+import {
+  customStyleMap
+} from './styles'
 
 /* Linkify */
 import createLinkifyPlugin from '../plugins/linkify'
@@ -76,6 +79,7 @@ class Editor extends Component {
           editorState={this.props.editorState}
           onChange={this.onChange}
           customStyleFn={colorStyleFn}
+          customStyleMap={customStyleMap}
           plugins={plugins}
           ref={this.editor.current}
         />
