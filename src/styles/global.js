@@ -1,5 +1,4 @@
 import { injectGlobal } from 'styled-components'
-import "prismjs/themes/prism.css"
 
 injectGlobal`
   * {
