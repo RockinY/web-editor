@@ -51,7 +51,7 @@ class Toolbar extends Component {
     let editorState = getEditorState()
 
     let show = true
-    if (editorState.getSelection().isCollapsed()) {
+    if (!editorState.getSelection().getHasFocus() || editorState.getSelection().isCollapsed()) {
       show = false
     }
 
