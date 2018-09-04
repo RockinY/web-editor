@@ -29,6 +29,7 @@ export default ({ blockType, icon }) => (
           <IconButton
             onClick={this.toggleStyle}
             glyph={icon}
+            size={24}
           />
         </ButtonWrapper>
       ) 

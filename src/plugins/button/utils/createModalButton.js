@@ -24,6 +24,7 @@ export default ({ type, icon }) => (
           <IconButton
             onClick={this.onClick}
             glyph={icon}
+            size={24}
           />
         </ButtonWrapper>
 

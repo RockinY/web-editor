@@ -10,6 +10,7 @@ export const IconButton = (props: IconProps) => (
       glyph={props.glyph}
       tipText={props.tipText}
       tipLocation={props.tipLocation}
+      size={props.size}
     />
   </StyledIconButton>
 )

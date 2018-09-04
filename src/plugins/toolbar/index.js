@@ -4,9 +4,7 @@ import Toolbar from './components/Toolbar'
 import getModalByType from './getModalByType'
 import {
   BoldButton,
-  ItalicButton,
   UnderlineButton,
-  BlockCodeButton,
   BlockquoteButton,
   TextColorButton
 } from '../button'
@@ -19,9 +17,7 @@ export default (config = {}) => {
   const {
     structure = [
       BoldButton,
-      ItalicButton,
       UnderlineButton,
-      BlockCodeButton,
       BlockquoteButton,
       TextColorButton
     ]

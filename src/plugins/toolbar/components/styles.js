@@ -7,6 +7,8 @@ export const ToolbarWrapper = styled.div`
   position: absolute;
   background-color: #57D9A3;
   z-index: 6000;
+  padding: 0 5px;
+  border-radius: 5px;
   box-sizing: border-box;
 
   button,
