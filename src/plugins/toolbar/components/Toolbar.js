@@ -3,6 +3,7 @@ import { getVisibleSelectionRect } from 'draft-js'
 import {
   ToolbarWrapper
 } from './styles'
+import OutsideClickHandler from '../../../components/OutsideClickHandler'
 
 class Toolbar extends Component {
   state = {
@@ -56,32 +57,34 @@ class Toolbar extends Component {
     }
 
     return (
-      <ToolbarWrapper
-        show={show}
-        style={position}
-      >
-        {
-          modalVisible &&
-            <Modal
-              getEditorState={store.getItem('getEditorState')}
-              setEditorState={store.getItem('setEditorState')}
-              closeModal={this.closeModal}
-              openModal={this.openModal}
-            />
-        }
-        {
-          !modalVisible &&
-            this.props.structure.map((Component, index) => (
-              <Component
-                key={index}
+      <OutsideClickHandler onOutsideClick={this.closeModal}>
+        <ToolbarWrapper
+          show={show}
+          style={position}
+        >
+          {
+            modalVisible &&
+              <Modal
                 getEditorState={store.getItem('getEditorState')}
                 setEditorState={store.getItem('setEditorState')}
                 closeModal={this.closeModal}
                 openModal={this.openModal}
               />
-            ))
-        }
-      </ToolbarWrapper>
+          }
+          {
+            !modalVisible &&
+              this.props.structure.map((Component, index) => (
+                <Component
+                  key={index}
+                  getEditorState={store.getItem('getEditorState')}
+                  setEditorState={store.getItem('setEditorState')}
+                  closeModal={this.closeModal}
+                  openModal={this.openModal}
+                />
+              ))
+          }
+        </ToolbarWrapper>
+      </OutsideClickHandler>
     )
   }
 }
