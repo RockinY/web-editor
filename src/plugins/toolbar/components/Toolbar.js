@@ -69,6 +69,7 @@ class Toolbar extends Component {
                 setEditorState={store.getItem('setEditorState')}
                 closeModal={this.closeModal}
                 openModal={this.openModal}
+                position={position}
               />
           }
           {

@@ -8,7 +8,8 @@ type Props = {
   size?: number | string,
   tipText?: string,
   tipLocation?: string,
-  onClick?: Function
+  onClick?: Function,
+  color?: string
 }
 
 export const InlineSvg = styled.svg`
@@ -31,8 +32,7 @@ export const SvgWrapper = styled.div`
   min-height: ${props => (props.size ? `${props.size}px` : '32px')};
   min-width: ${props => (props.size ? `${props.size}px` : '32px')};
   position: relative;
-  color: inherit;
-
+  color:${props => props.color ? props.color : 'inherit'};
   ${props => (props.tipText ? Tooltip(props) : '')};
 `
 
@@ -102,6 +102,12 @@ export const Glyph = ({ glyph }: GlyphProps) => {
           <path d='M21.14,12.14h2.57V23.71H12.14V21.14h9Zm-10.28,9v3.22a.6.6,0,0,0,.64.64H24.36a.61.61,0,0,0,.64-.64V11.5a.6.6,0,0,0-.64-.64H21.14V7.64A.6.6,0,0,0,20.5,7H7.64A.61.61,0,0,0,7,7.64V20.5a.6.6,0,0,0,.64.64Z' />
         </g>
       )
+    case 'square':
+      return (
+        <g>
+          <path d='M25,9.45v13.1A2.45,2.45,0,0,1,22.55,25H9.45A2.45,2.45,0,0,1,7,22.55H7V9.45A2.45,2.45,0,0,1,9.45,7h13.1A2.45,2.45,0,0,1,25,9.45Z' />
+        </g>
+      )
   }
 }
 
@@ -114,7 +120,8 @@ class Icon extends React.Component<Props> {
       onboarding,
       count,
       onClick,
-      glyph
+      glyph,
+      color
     } = this.props
 
     return (
@@ -126,6 +133,7 @@ class Icon extends React.Component<Props> {
         count={count}
         className={'icon'}
         onClick={onClick}
+        color={color}
       >
         <InlineSvg
           fillRule='evenodd'
