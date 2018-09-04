@@ -10,6 +10,7 @@ import {
 } from '../../../components/Button'
 import MediaInput from './MediaInput'
 import addImageFn from '../../image/addImage'
+import OutsideClickHandler from '../../../components/OutsideClickHandler'
 
 type Props = {
   store: Object,
@@ -80,6 +81,12 @@ class Sidebar extends React.Component<Props, State> {
     this.setState({ inserting: !this.state.inserting })
   }
 
+  closeSidebar = () => {
+    if (this.state.inserting) {
+      this.setState({ inserting: false })
+    }
+  }
+
   addImages = (files: FileList) => {
     const { addImage } = this.state;
     const { state, onChange } = this.props;
@@ -114,21 +121,23 @@ class Sidebar extends React.Component<Props, State> {
     const { position, inserting } = this.state
 
     return (
-      <SidebarWrapper style={position}>
-        <Expander inserting={inserting}>
-          <IconButton
-            glyph={'inserter'}
-            onClick={this.toggleSidebar}
-          />
-          <Action>
-            <MediaInput
-              onChange={this.addImage}
-              multiple
-              tipLocation={'right'}
+      <OutsideClickHandler onOutsideClick={this.closeSidebar}>
+        <SidebarWrapper style={position}>
+          <Expander inserting={inserting}>
+            <IconButton
+              glyph={'inserter'}
+              onClick={this.toggleSidebar}
             />
-          </Action>
-        </Expander>
-      </SidebarWrapper>
+            <Action>
+              <MediaInput
+                onChange={this.addImage}
+                multiple
+                tipLocation={'right'}
+              />
+            </Action>
+          </Expander>
+        </SidebarWrapper>
+      </OutsideClickHandler>
     )
   }
 }
