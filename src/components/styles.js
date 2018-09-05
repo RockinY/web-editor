@@ -45,17 +45,11 @@ export const StyledIconButton = styled.button`
   width: 32px;
   height: 32px;
   background-color: transparent;
-  color: ${props =>
-    props.disabled
-      ? '#DFE7EF'
-      : '#828C99'};
+  color: #FFFFFF;
   opacity: ${props => (props.opacity ? props.opacity : 1)};
 
   &:hover {
-    color: ${props =>
-      props.disabled
-        ? '#DFE7EF'
-        : '#57D9A3'};
+    color: #FFFFFF;
     box-shadow: none;
     opacity: 1;
   }

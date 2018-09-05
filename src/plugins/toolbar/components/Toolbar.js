@@ -77,13 +77,13 @@ class Toolbar extends Component {
         </ToolbarWrapper>
         {
           modalVisible &&
-          <Modal
-          getEditorState={store.getItem('getEditorState')}
-          setEditorState={store.getItem('setEditorState')}
-          closeModal={this.closeModal}
-          openModal={this.openModal}
-          position={position}
-          />
+            <Modal
+              getEditorState={store.getItem('getEditorState')}
+              setEditorState={store.getItem('setEditorState')}
+              closeModal={this.closeModal}
+              openModal={this.openModal}
+              position={position}
+            />
         }
       </OutsideClickHandler>
     )

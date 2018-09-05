@@ -11,6 +11,7 @@ import {
 import MediaInput from './MediaInput'
 import addImageFn from '../../image/addImage'
 import OutsideClickHandler from '../../../components/OutsideClickHandler'
+import { BlockCodeButton } from '../../button'
 
 type Props = {
   store: Object,
@@ -133,6 +134,15 @@ class Sidebar extends React.Component<Props, State> {
                 onChange={this.addImage}
                 multiple
                 tipLocation={'right'}
+              />
+            </Action>
+            <Action>
+              <BlockCodeButton
+                tipText='Add code block'
+                tipLocation={'right'}
+                getEditorState={store.getItem('getEditorState')}
+                setEditorState={store.getItem('setEditorState')}
+                size={32}
               />
             </Action>
           </Expander>

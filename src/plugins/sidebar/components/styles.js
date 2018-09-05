@@ -9,10 +9,10 @@ export const SidebarWrapper = styled.div`
 
 export const Action = styled.div`
   display: ${props => props.embedding ? 'flex' : 'none'};
-  flex: 0 0 40px;
+  flex: 0 0 32px;
   flex-direction: column;
-  height: 40px;
-  max-height: 40px;
+  height: 32px;
+  max-height: 32px;
   justify-content: center;
   align-items: flex-start;
   position: relative;

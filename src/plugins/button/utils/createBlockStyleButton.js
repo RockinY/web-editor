@@ -29,7 +29,7 @@ export default ({ blockType, icon }) => (
           <IconButton
             onClick={this.toggleStyle}
             glyph={icon}
-            size={24}
+            size={this.props.size || 24}
           />
         </ButtonWrapper>
       ) 
