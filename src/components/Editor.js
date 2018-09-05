@@ -32,7 +32,7 @@ const toolbarPlugin = createToolbarPlugin()
 const { Toolbar } = toolbarPlugin
 
 /* Color */
-import { colorStyleFn } from '../plugins/colorPicker'
+import { colorStyleMap } from '../plugins/colorPicker'
 
 /* Prism */
 import createPrismPlugin from '../plugins/prism'
@@ -75,7 +75,7 @@ class Editor extends Component {
         <PluginEditor
           editorState={this.props.editorState}
           onChange={this.onChange}
-          customStyleFn={colorStyleFn}
+          customStyleMap={colorStyleMap}
           plugins={plugins}
           ref={this.editor.current}
         />

@@ -4,7 +4,7 @@ import {
   StyledIconButton
 } from './styles'
 
-export const IconButton = (props: IconProps) => (
+export const IconButton = (props) => (
   <StyledIconButton disabled={props.loading} {...props}>
     <Icon
       glyph={props.glyph}

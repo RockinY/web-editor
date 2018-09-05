@@ -5,7 +5,7 @@
  *
  * License: MIT
  */
-import Picker from './Picker'
+import Picker, { colors } from './Picker'
 
 const colorStyleFn = (styles) => {
   const output = {};
@@ -19,7 +19,13 @@ const colorStyleFn = (styles) => {
   return output
 }
 
+const colorStyleMap = {}
+colors.map((c, i) => {
+  colorStyleMap[`color-${c.replace('#', '')}`] = { background: c, color: '#fff' }
+})
+
 module.exports = {
   Picker,
-  colorStyleFn
+  colorStyleFn,
+  colorStyleMap
 }
