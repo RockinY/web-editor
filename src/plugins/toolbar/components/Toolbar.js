@@ -44,12 +44,6 @@ class Toolbar extends Component {
     this.setState({ modalVisible: false })
   }
 
-  outsideClick = () => {
-    if (!this.state.modalVisible) {
-      this.setState({ modalVisible: false })
-    }
-  }
-
   render () {
     const { store } = this.props
     const { modal, modalVisible, position } = this.state
@@ -63,37 +57,35 @@ class Toolbar extends Component {
     }
 
     return (
-      <React.Fragment>
-        <OutsideClickHandler onOutsideClick={this.outsideClick}>
-          <ToolbarWrapper
-            show={show}
-            style={position}
-          >
-            { 
-              !modalVisible &&
-                this.props.structure.map((Component, index) => (
-                  <Component
-                    key={index}
-                    getEditorState={store.getItem('getEditorState')}
-                    setEditorState={store.getItem('setEditorState')}
-                    closeModal={this.closeModal}
-                    openModal={this.openModal}
-                  />
-                ))
-            }
-          </ToolbarWrapper>
-        </OutsideClickHandler>
+      <OutsideClickHandler onOutsideClick={this.closeModal}>
+        <ToolbarWrapper
+          show={show}
+          style={position}
+        >
+          { 
+            !modalVisible &&
+              this.props.structure.map((Component, index) => (
+                <Component
+                  key={index}
+                  getEditorState={store.getItem('getEditorState')}
+                  setEditorState={store.getItem('setEditorState')}
+                  closeModal={this.closeModal}
+                  openModal={this.openModal}
+                />
+              ))
+          }
+        </ToolbarWrapper>
         {
           modalVisible &&
-            <Modal
-              getEditorState={store.getItem('getEditorState')}
-              setEditorState={store.getItem('setEditorState')}
-              closeModal={this.closeModal}
-              openModal={this.openModal}
-              position={position}
-            />
+          <Modal
+          getEditorState={store.getItem('getEditorState')}
+          setEditorState={store.getItem('setEditorState')}
+          closeModal={this.closeModal}
+          openModal={this.openModal}
+          position={position}
+          />
         }
-      </React.Fragment>
+      </OutsideClickHandler>
     )
   }
 }
