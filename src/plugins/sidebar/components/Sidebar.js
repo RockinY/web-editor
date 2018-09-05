@@ -32,6 +32,7 @@ type State = {
 
 class Sidebar extends React.Component<Props, State> {
   state = {
+    show: false,
     inserting: false,
     position: {
       transform: 'scale(0)'
@@ -51,6 +52,9 @@ class Sidebar extends React.Component<Props, State> {
     const currentContent = editorState.getCurrentContent()
     const currentBlock = currentContent.getBlockForKey(selection.getStartKey())
     const offsetKey = DraftOffsetKey.encode(currentBlock.getKey(), 0, 0)
+    const currentBlockType = currentBlock.getType()
+    const currentBlockLength = currentBlock.getLength()
+
     // Note: need to wait on tick to make sure the DOM node has been create by Draft.js
     setTimeout(() => {
       const node = document.querySelectorAll(`[data-offset-key="${offsetKey}"]`)[0]
@@ -68,7 +72,13 @@ class Sidebar extends React.Component<Props, State> {
         editorRoot = editorRoot.parentNode;
       }
 
+      var show = false
+      if (currentBlockType === 'unstyled' && currentBlockLength === 0) {
+        show = true
+      }
+
       this.setState({
+        show,
         position: {
           top: node.offsetTop + editorRoot.offsetTop,
           left: node.offsetLeft + 18,
@@ -119,11 +129,11 @@ class Sidebar extends React.Component<Props, State> {
 
   render () {
     const { store } = this.props
-    const { position, inserting } = this.state
+    const { position, inserting, show } = this.state
 
     return (
       <OutsideClickHandler onOutsideClick={this.closeSidebar}>
-        <SidebarWrapper style={position}>
+        <SidebarWrapper style={position} show={show}>
           <Expander inserting={inserting}>
             <IconButton
               glyph={'inserter'}

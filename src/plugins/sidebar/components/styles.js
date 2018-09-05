@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 export const SidebarWrapper = styled.div`
+  display: ${props => props.show ? 'inherit' : 'none'};
   position: fixed;
   margin-top: -8px;
   z-index: 2000;
