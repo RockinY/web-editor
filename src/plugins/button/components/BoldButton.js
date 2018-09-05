@@ -3,5 +3,7 @@ import createInlineStyleButton from '../utils/createInlineStyleButton'
 
 export default createInlineStyleButton({
   style: 'BOLD',
-  icon: 'bold'
+  icon: 'bold',
+  inlineTipText: '加粗',
+  inlineTipLocation: 'top'
 })

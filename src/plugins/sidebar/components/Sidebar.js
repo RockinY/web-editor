@@ -138,7 +138,7 @@ class Sidebar extends React.Component<Props, State> {
             </Action>
             <Action>
               <BlockCodeButton
-                tipText='Add code block'
+                tipText='输入代码'
                 tipLocation={'right'}
                 getEditorState={store.getItem('getEditorState')}
                 setEditorState={store.getItem('setEditorState')}

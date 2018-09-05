@@ -7,7 +7,7 @@ import {
   ButtonWrapper
 } from '../styles'
 
-export default ({ style, icon }) => (
+export default ({ style, icon, inlineTipText, inlineTipLocation }) => (
   class InlineStyleButton extends Component {
     toggleStyle = (event) => {
       event.preventDefault()
@@ -22,6 +22,7 @@ export default ({ style, icon }) => (
     preventBubblingUp = (event) => { event.preventDefault(); }   
     
     render () {
+      const { size, tipText, tipLocation } = this.props
       return (
         <ButtonWrapper
           onMouseDown={this.preventBubblingUp}
@@ -29,10 +30,12 @@ export default ({ style, icon }) => (
           <IconButton
             onClick={this.toggleStyle}
             glyph={icon}
-            size={24}
+            size={size || 24}
+            tipText={tipText || inlineTipText}
+            tipLocation={tipLocation || inlineTipLocation || 'top'}
           />
         </ButtonWrapper>
-      ) 
+      )
     }
   }
 )

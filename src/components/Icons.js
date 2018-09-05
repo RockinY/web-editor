@@ -147,7 +147,6 @@ class Icon extends React.Component<Props> {
           fit
           id={glyph}
         >
-          <title id='title'>{glyph}</title>
           <Glyph glyph={glyph} />
         </InlineSvg>
       </SvgWrapper>

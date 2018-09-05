@@ -6,7 +6,7 @@ import {
   ButtonWrapper
 } from '../styles'
 
-export default ({ type, icon }) => (
+export default ({ type, icon, inlineTipText, inlineTipLocation }) => (
   class embedButton extends Component {
 
     onClick = (e) => {
@@ -17,6 +17,7 @@ export default ({ type, icon }) => (
     preventBubblingUp = (event) => { event.preventDefault() }
 
     render () {
+      const { size, tipText, tipLocation } = this.props
       return (
         <ButtonWrapper
           onMouseDown={this.preventBubblingUp}
@@ -24,10 +25,11 @@ export default ({ type, icon }) => (
           <IconButton
             onClick={this.onClick}
             glyph={icon}
-            size={24}
+            size={size || 24}
+            tipText={tipText || inlineTipText}
+            tipLocation={tipLocation || inlineTipLocation || 'top'}
           />
         </ButtonWrapper>
-
       )
     }
   }
