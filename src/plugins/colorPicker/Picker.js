@@ -4,7 +4,7 @@ import {
 } from '../../components/Button'
 
 export const colors = [
-  '#191970', '#0074D9', '#7FDBFF'
+  '#DE350B', '#0052CC', '#00B8D9', '#36B37E'
 ]
 
 class Picker extends React.Component {
