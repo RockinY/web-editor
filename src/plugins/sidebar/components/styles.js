@@ -31,15 +31,18 @@ export const Expander = styled.div`
     color: #57D9A3;
   }
 
-  button:first-of-type {
+  > div {
+    transform: scale(${props => props.inserting ? '1' : '0'});
+    transition: transform 1s;
+  }
+
+  > button {
     margin-right: 5px;
   }
 
   ${props =>
     props.inserting &&
     css`
-      transition: all 0.2s ease-in;
-
       ${Action} {
         display: flex;
       }
