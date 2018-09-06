@@ -23,8 +23,10 @@ const decorator = composeDecorators(
 );
 
 /* Linkify */
-import createLinkifyPlugin from '../plugins/linkify'
-const linkifyPlugin = createLinkifyPlugin()
+import createLinkifyPlugin from 'draft-js-linkify-plugin';
+const linkifyPlugin = createLinkifyPlugin({
+  target: '_blank'
+})
 
 /* Sidebar */
 import createSidebarPlugin from '../plugins/sidebar'
