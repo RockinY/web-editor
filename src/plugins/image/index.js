@@ -2,7 +2,11 @@ import React from 'react'
 import addImage from './addImage'
 import ImageComponent from './Image'
 
-export default () => {
+export default (config = {}) => {
+  let Image = config.imageComponent || ImageComponent;
+  if (config.decorator) {
+    Image = config.decorator(Image);
+  }
   return {
     blockRendererFn: (block, { getEditorState }) => {
       if (block.getType() === 'atomic') {
@@ -13,7 +17,7 @@ export default () => {
         const type = contentState.getEntity(entity).getType();
         if (type === 'IMAGE' || type === 'image') {
           return {
-            component: ImageComponent,
+            component: Image,
             editable: false,
           };
         }

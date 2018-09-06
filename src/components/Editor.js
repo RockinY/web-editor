@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PluginEditor from 'draft-js-plugins-editor'
+import PluginEditor, { composeDecorators } from 'draft-js-plugins-editor'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-scala';
@@ -13,6 +13,15 @@ import 'prismjs/components/prism-perl';
 import 'prismjs/components/prism-ruby';
 import 'prismjs/components/prism-swift';
 
+/* Focus */
+import createFocusPlugin from 'draft-js-focus-plugin';
+const focusPlugin = createFocusPlugin()
+
+/* Decorators */
+const decorator = composeDecorators(
+  focusPlugin.decorator
+);
+
 /* Linkify */
 import createLinkifyPlugin from '../plugins/linkify'
 const linkifyPlugin = createLinkifyPlugin()
@@ -24,7 +33,9 @@ const { Sidebar } = sidebarPlugin
 
 /* Image */
 import createImagePlugin from '../plugins/image'
-const imagePlugin = createImagePlugin()
+const imagePlugin = createImagePlugin({
+  decorator
+})
 
 /* Toolbar */
 import createToolbarPlugin from '../plugins/toolbar'
@@ -56,7 +67,8 @@ const plugins = [
   toolbarPlugin,
   prismPlugin,
   codePlugin,
-  markdownPlugin
+  markdownPlugin,
+  focusPlugin
 ]
 
 class Editor extends Component {
