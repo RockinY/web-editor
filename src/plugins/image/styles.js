@@ -17,12 +17,10 @@ export const blinkBorder = keyframes`
 
 export const ImageContainer = styled.div`
   position: relative;
-  margin: 12px 0;
   pointer-events: none;
   ${props =>
     props.active &&
     css`
-      border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(54, 179, 126, 0.2);
     `} transition: all 0.1s ease-in-out;
@@ -35,7 +33,6 @@ export const ActiveOverlay = styled.span`
   right: 0;
   bottom: 0;
   background: rgba(54, 179, 126, 0.1);
-  border-radius: 8px;
   border: 1px solid #36B37E;
   opacity: ${props => (props.active ? 1 : 0)};
   transition: opacity 0.1s ease-in-out;

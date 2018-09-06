@@ -133,13 +133,11 @@ injectGlobal`
   }
 
   .draftjs-web-editor img {
-    margin-top: 16px;
     max-width: 100%;
     display: inline;
     border-radius: 4px;
     transition: box-shadow 0.2s;
     display: block;
-    margin: 12px 0;
   }
 
   .draftjs-web-editor img:hover {

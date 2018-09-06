@@ -1,5 +1,6 @@
 import { css } from 'styled-components'
 import 'css.escape'
+import { colors } from '../theme'
 
 const returnTooltip = props => {
   switch (props.tipLocation) {
@@ -14,7 +15,7 @@ const returnTooltip = props => {
             right: 0;
             transform: translateX(-100%);
             border-bottom-width: 0;
-            border-top-color: #172B4D;
+            border-top-color: ${colors.dark};
           }
       `
     case 'top-right':
@@ -28,7 +29,7 @@ const returnTooltip = props => {
             left: 0;
             transform: translateX(100%);
             border-bottom-width: 0;
-            border-top-color: #172B4D;
+            border-top-color: ${colors.dark};
           }
       `
     case 'top':
@@ -43,7 +44,7 @@ const returnTooltip = props => {
             left: 50%;
             transform: translateX(-50%);
             border-bottom-width: 0;
-            border-top-color: #172B4D;
+            border-top-color: ${colors.dark};
           }
       `
     case 'right':
@@ -58,7 +59,7 @@ const returnTooltip = props => {
             top: calc(50% - 5px);
             left: 100%;
             border-left-width: 0;
-            border-right-color: #172B4D;
+            border-right-color: ${colors.dark};
           }
       `
     case 'bottom-left':
@@ -72,7 +73,7 @@ const returnTooltip = props => {
             right: 0;
             transform: translateX(-100%);
             border-top-width: 0;
-            border-bottom-color: #172B4D;
+            border-bottom-color: ${colors.dark};
           }
       `
     case 'bottom-right':
@@ -86,7 +87,7 @@ const returnTooltip = props => {
             left: 0;
             transform: translateX(100%);
             border-top-width: 0;
-            border-bottom-color: #172B4D;
+            border-bottom-color: ${colors.dark};
           }
       `
     case 'bottom':
@@ -101,7 +102,7 @@ const returnTooltip = props => {
           left: 50%;
           transform: translateX(-50%);
           border-top-width: 0;
-          border-bottom-color: #172B4D;
+          border-bottom-color: ${colors.dark};
         }
       `
     case 'left':
@@ -115,7 +116,7 @@ const returnTooltip = props => {
             right: 100%;
             top: calc(50% - 5px);
             border-right-width: 0;
-            border-left-color: #172B4D;
+            border-left-color: ${colors.dark};
           }
       `
   }
@@ -157,8 +158,8 @@ export default props => css`
     padding: 8px 12px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(23, 43, 77, 0.25);
-    background: #172B4D;
-    color: #FFFFFF;
+    background: ${colors.dark};
+    color: ${colors.reverse};
   }
 
   ${props.tipText ? returnTooltip(props) : ''};

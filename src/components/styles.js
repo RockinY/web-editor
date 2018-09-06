@@ -1,5 +1,6 @@
 // @flow
 import styled, { css } from 'styled-components'
+import { colors } from '../theme'
 
 const baseButton = css`
   display: flex;
@@ -23,15 +24,6 @@ const baseButton = css`
     props.icon
       ? props.large ? '8px 12px' : '4px 8px'
       : props.large ? '16px 32px' : '12px 16px'};
-  
-  &:hover {
-    transition: all 0.2s ease-in;
-    box-shadow: ${props =>
-      props.disabled
-        ? 'none'
-        : `0 8px 16px rgba(23, 43, 77, 0.15)`};
-    opacity: ${props => (props.disabled ? '0.5' : '1')};
-  }
 
   /* if an icon and label are both present, add space around the label*/
   div + span,
@@ -45,11 +37,11 @@ export const StyledIconButton = styled.button`
   width: 32px;
   height: 32px;
   background-color: transparent;
-  color: #FFFFFF;
+  color: colors.reverse;
   opacity: ${props => (props.opacity ? props.opacity : 1)};
 
   &:hover {
-    color: #FFFFFF;
+    color: colors.reverse;
     box-shadow: none;
     opacity: 1;
   }
