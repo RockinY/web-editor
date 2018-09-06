@@ -143,13 +143,13 @@ class Sidebar extends React.Component<Props, State> {
               <MediaInput
                 onChange={this.addImage}
                 multiple
-                tipLocation={'right'}
+                tipLocation={'bottom'}
               />
             </Action>
             <Action>
               <BlockCodeButton
                 tipText='输入代码'
-                tipLocation={'right'}
+                tipLocation={'bottom'}
                 getEditorState={store.getItem('getEditorState')}
                 setEditorState={store.getItem('setEditorState')}
                 size={32}

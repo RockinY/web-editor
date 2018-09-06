@@ -17,42 +17,28 @@ export const Action = styled.div`
   justify-content: center;
   align-items: flex-start;
   position: relative;
-
-  label > div,
-  label > button > div {
-    color: #FFFFFF;
-  }
 `
 
 export const Expander = styled.div`
-  display: inline-block;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  display: flex;
   padding: 4px;
-  border-radius: 12px;
 
-  > button > div {
+  button > div {
     color: #A3AFBF;
   }
 
-  > button:hover > div {
+  button:hover > div {
     color: #57D9A3;
+  }
+
+  button:first-of-type {
+    margin-right: 5px;
   }
 
   ${props =>
     props.inserting &&
     css`
-      background-color: #57D9A3;
       transition: all 0.2s ease-in;
-
-      > button > div {
-        color: #E8E5FF;
-      }
-
-      > button:hover > div {
-        color: #E8E5FF;
-      }
 
       ${Action} {
         display: flex;
