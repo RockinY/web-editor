@@ -10,19 +10,12 @@ export default class Image extends Component {
     const {
       block,
       selection,
+      blockProps,
       contentState
     } = this.props;
 
-    const focusKey = selection.getFocusKey()
-    const blockKey = block.getKey()
+    const active = blockProps.isFocused;
 
-    console.log(focusKey);
-    
-    
-    let active = false
-    if (focusKey === blockKey) {
-      active = true
-    }
     const { src } = contentState.getEntity(block.getEntityAt(0)).getData();
     return (
       <ImageContainer active={active}>
