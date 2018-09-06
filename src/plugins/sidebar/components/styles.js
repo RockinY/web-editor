@@ -2,14 +2,17 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 export const SidebarWrapper = styled.div`
-  display: ${props => props.show ? 'inherit' : 'none'};
+  display: inherit;
+  transform: scale(${props => props.show ? '1' : '0'});
+  opacity: ${props => props.show ? 1 : 0};
+  transition: transform 0.1s;
   position: fixed;
   margin-top: -8px;
   z-index: 2000;
 `
 
 export const Action = styled.div`
-  display: ${props => props.embedding ? 'flex' : 'none'};
+  display: flex;
   flex: 0 0 32px;
   flex-direction: column;
   height: 32px;
@@ -17,6 +20,8 @@ export const Action = styled.div`
   justify-content: center;
   align-items: flex-start;
   position: relative;
+  transform: scale(0);
+  width: 0;
 `
 
 export const Expander = styled.div`
@@ -30,12 +35,7 @@ export const Expander = styled.div`
   button:hover > div {
     color: #57D9A3;
   }
-
-  > div {
-    transform: scale(${props => props.inserting ? '1' : '0'});
-    transition: transform 1s;
-  }
-
+  
   > button {
     margin-right: 5px;
   }
@@ -44,7 +44,9 @@ export const Expander = styled.div`
     props.inserting &&
     css`
       ${Action} {
-        display: flex;
+        transform: scale(1);
+        transition: transform 0.2s;
+        width: 32px;
       }
     `
   }
