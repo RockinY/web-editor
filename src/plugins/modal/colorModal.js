@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import { RichUtils } from 'draft-js'
 import { Picker } from '../colorPicker' 
-import {
-  ToolbarWrapper
-} from '../toolbar/components/styles'
+import { ToolbarWrapper } from '../toolbar/components/styles'
 
 export default class extends Component {
   setColor = (color) => {

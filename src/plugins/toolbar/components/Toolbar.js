@@ -35,6 +35,7 @@ class Toolbar extends Component {
 
   openModal = (type) => {
     const modal = this.props.getModalByType(type)
+    
     this.setState({ modal }, () => {
       this.setState({ modalVisible: true })
     })

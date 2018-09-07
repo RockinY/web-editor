@@ -6,7 +6,8 @@ import {
   BoldButton,
   UnderlineButton,
   BlockquoteButton,
-  TextColorButton
+  TextColorButton,
+  LinkButton
 } from '../button'
 
 export default (config = {}) => {
@@ -19,7 +20,8 @@ export default (config = {}) => {
       BoldButton,
       UnderlineButton,
       BlockquoteButton,
-      TextColorButton
+      TextColorButton,
+      LinkButton
     ]
   } = config
 

@@ -29,11 +29,13 @@
     "draft-js-markdown-plugin": "^3.0.4",
     "draft-js-plugins-editor": "^2.1.1",
     "draft-js-prism": "^1.0.6",
+    "linkify-it": "^2.0.3",
     "prismjs": "^1.15.0",
     "react": "^16.4.2",
     "react-color": "^2.14.1",
     "react-dom": "^16.4.2",
     "styled-components": "^3.4.5",
+    "tlds": "^1.203.1",
     "validator": "^10.7.1"
   },
   "devDependencies": {

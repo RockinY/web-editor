@@ -21,6 +21,7 @@ class EmbedInputComponent extends Component {
     return (
       <EmbedContainer>
         <EmbedInput
+          autoFocus
           type="text"
           onChange={this.onChange}
           placeholder="输入网站提供的嵌入地址"

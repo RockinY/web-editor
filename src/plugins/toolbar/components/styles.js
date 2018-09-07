@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 export const ToolbarWrapper = styled.div`
   display: ${p => p.show ? 'flex' : 'none'};
   left: 50%;
+  height: 32px;
   transform: translate(-50%) scale(1);
   position: absolute;
   background-color: #57D9A3;
