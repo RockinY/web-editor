@@ -6,6 +6,7 @@ import { ToolbarWrapper } from '../toolbar/components/styles'
 import {
   LinkInput
 } from './styles'
+import { IconButton } from '../../components/Button'
 
 const linkify = linkifyIt({ fuzzyIP: false })
 linkify.tlds(tlds)
@@ -89,6 +90,14 @@ class Link extends Component {
           value={this.state.url}
           onKeyDown={this.onKeyDown}
           placeholder='输入链接地址'
+        />
+        <IconButton 
+          glyph='ok'
+          size={24}
+        />
+        <IconButton 
+          glyph='cancel'
+          size={24}
         />
       </ToolbarWrapper>
     )
