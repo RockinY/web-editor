@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import DraftOffsetKey from 'draft-js/lib/DraftOffsetKey'
 import {
   SidebarWrapper,
@@ -12,6 +12,7 @@ import MediaInput from './MediaInput'
 import addImageFn from '../../image/addImage'
 import OutsideClickHandler from '../../../components/OutsideClickHandler'
 import { BlockCodeButton } from '../../button'
+import EmbedInput from './EmbedInput'
 
 type Props = {
   store: Object,
@@ -115,12 +116,16 @@ class Sidebar extends React.Component<Props, State> {
   }
 
   toggleEmbedding = () => {
+    this.setState({ embedding: true })
+  }
 
+  insertEmbed = (url) => {
+    console.log(url);
   }
 
   render () {
     const { store } = this.props
-    const { position, inserting, show } = this.state
+    const { position, inserting, show, embedding } = this.state
 
     return (
       <OutsideClickHandler onOutsideClick={this.closeSidebar}>
@@ -130,31 +135,44 @@ class Sidebar extends React.Component<Props, State> {
               glyph={'inserter'}
               onClick={this.toggleSidebar}
             />
-            <Action>
-              <MediaInput
-                onChange={this.addImage}
-                multiple
-                tipLocation={'bottom'}
-              />
-            </Action>
-            <Action>
-              <BlockCodeButton
-                tipText='输入代码'
-                tipLocation={'bottom'}
-                getEditorState={store.getItem('getEditorState')}
-                setEditorState={store.getItem('setEditorState')}
-                size={32}
-              />
-            </Action>
-            <Action>
-              <IconButton
-                glyph={'embed'}
-                onClick={this.toggleEmbedding}
-                tipText='嵌入视频或网站内容'
-                tipLocation={'bottom'}
-                size={32}
-              />
-            </Action>
+            {
+              !embedding && (
+                <Fragment>
+                  <Action>
+                    <MediaInput
+                      onChange={this.addImage}
+                      multiple
+                      tipLocation={'bottom'}
+                    />
+                  </Action>
+                  <Action>
+                    <BlockCodeButton
+                      tipText='输入代码'
+                      tipLocation={'bottom'}
+                      getEditorState={store.getItem('getEditorState')}
+                      setEditorState={store.getItem('setEditorState')}
+                      size={32}
+                    />
+                  </Action>
+                  <Action>
+                    <IconButton
+                      glyph={'embed'}
+                      onClick={this.toggleEmbedding}
+                      tipText='嵌入视频或网站内容'
+                      tipLocation={'bottom'}
+                      size={32}
+                    />
+                  </Action>
+                </Fragment>
+              )
+            }
+            {
+              embedding && (
+                <EmbedInput
+                  onSubmit={this.insertEmbed}
+                />
+              )
+            }
           </Expander>
         </SidebarWrapper>
       </OutsideClickHandler>

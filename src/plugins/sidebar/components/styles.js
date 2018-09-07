@@ -36,8 +36,8 @@ export const Expander = styled.div`
     color: #57D9A3;
   }
   
-  > button {
-    margin-right: 5px;
+  > button:first-of-type {
+    margin-right: 10px;
   }
 
   ${props =>
@@ -76,3 +76,19 @@ export const MediaLabel = styled.label`
     color: #57D9A3;
   }
 `;
+
+export const EmbedContainer = styled.div`
+  height: 32px;
+  display: flex;
+`
+
+export const EmbedInput = styled.input`
+  height: 32px;
+  width: 200px;
+  font-size: 16px;
+  color: #57D9A3;
+
+  &::placeholder {
+    color: #A3AFBF;
+  }
+`
