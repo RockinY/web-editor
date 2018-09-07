@@ -22,7 +22,6 @@ class Embed extends Component {
           allowFullScreen={true}
           frameBorder="0"
           border="0"
-          scrolling="no"
           src={src}
         />
       </EmbedContainer>
