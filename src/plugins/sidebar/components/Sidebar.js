@@ -167,6 +167,14 @@ class Sidebar extends React.Component<Props, State> {
                       size={32}
                     />
                   </Action>
+                  <Action>
+                    <IconButton
+                      glyph={'three-dots'}
+                      tipText='分割线'
+                      tipLocation={'bottom'}
+                      size={32}
+                    />
+                  </Action>
                 </Fragment>
               )
             }
