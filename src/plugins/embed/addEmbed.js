@@ -7,10 +7,7 @@ import {
 export default (editorState, attrs) => {
   const urlType = 'embed'
   const entityKey = Entity.create(urlType, 'IMMUTABLE', {
-    src: (attrs && attrs.url) || null,
-    aspectRatio: attrs && attrs.aspectRatio,
-    width: attrs && attrs.width,
-    height: attrs && attrs.height
+    src: (attrs && attrs.url) || null
   })
   const newEditorState = AtomicBlockUtils.insertAtomicBlock(
     editorState,

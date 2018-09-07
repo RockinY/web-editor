@@ -13,6 +13,8 @@ import addImageFn from '../../image/addImage'
 import OutsideClickHandler from '../../../components/OutsideClickHandler'
 import { BlockCodeButton } from '../../button'
 import EmbedInput from './EmbedInput'
+import addEmbed from '../../embed/addEmbed'
+import parseEmbedUrl from '../../embed/parseUrl'
 
 type Props = {
   store: Object,
@@ -120,7 +122,9 @@ class Sidebar extends React.Component<Props, State> {
   }
 
   insertEmbed = (url) => {
-    console.log(url);
+    const { editorState, onChange } = this.props;
+    onChange(addEmbed(editorState, parseEmbedUrl(url)))
+    this.closeSidebar()
   }
 
   render () {
