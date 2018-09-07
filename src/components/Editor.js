@@ -65,6 +65,10 @@ const markdownPlugin = createMarkdownPlugin()
 import createEmbedPlugin from '../plugins/embed'
 const embedPlugin = createEmbedPlugin()
 
+/* Divider */
+import createDividerPlugin from '../plugins/divider'
+const dividerPlugin = createDividerPlugin()
+
 /* All plugins */
 const plugins = [
   linkifyPlugin,
@@ -75,7 +79,8 @@ const plugins = [
   codePlugin,
   markdownPlugin,
   focusPlugin,
-  embedPlugin
+  embedPlugin,
+  dividerPlugin
 ]
 
 class Editor extends Component {

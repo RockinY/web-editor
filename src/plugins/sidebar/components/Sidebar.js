@@ -15,6 +15,7 @@ import { BlockCodeButton } from '../../button'
 import EmbedInput from './EmbedInput'
 import addEmbed from '../../embed/addEmbed'
 import parseEmbedUrl from '../../embed/parseUrl'
+import addDividerDots from '../../divider/addDivider'
 
 type Props = {
   store: Object,
@@ -127,6 +128,12 @@ class Sidebar extends React.Component<Props, State> {
     this.closeSidebar()
   }
 
+  addDivider = () => {
+    const { editorState, onChange } = this.props;
+    onChange(addDividerDots(editorState, {}))
+    this.closeSidebar()
+  }
+
   render () {
     const { store } = this.props
     const { position, inserting, show, embedding } = this.state
@@ -171,6 +178,7 @@ class Sidebar extends React.Component<Props, State> {
                     <IconButton
                       glyph={'three-dots'}
                       tipText='分割线'
+                      onClick={this.addDivider}
                       tipLocation={'bottom'}
                       size={32}
                     />

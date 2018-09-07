@@ -257,9 +257,7 @@ injectGlobal`
   .draftjs-web-editor hr {
     width: 100%;
     height: 1px;
-    background: #dfe7ef;
     display: block;
-    margin: 32px 0;
   }
 
   .draftjs-web-editor h1 {
