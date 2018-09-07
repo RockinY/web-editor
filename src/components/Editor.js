@@ -61,6 +61,10 @@ const codePlugin = createCodeEditorPlugin()
 import createMarkdownPlugin from 'draft-js-markdown-plugin'
 const markdownPlugin = createMarkdownPlugin()
 
+/* Embed */
+import createEmbedPlugin from '../plugins/embed'
+const embedPlugin = createEmbedPlugin()
+
 /* All plugins */
 const plugins = [
   linkifyPlugin,
@@ -70,7 +74,8 @@ const plugins = [
   prismPlugin,
   codePlugin,
   markdownPlugin,
-  focusPlugin
+  focusPlugin,
+  embedPlugin
 ]
 
 class Editor extends Component {
