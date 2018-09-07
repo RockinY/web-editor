@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {
-  AspectRatio,
   EmbedComponent,
   EmbedContainer
 } from './styles'
@@ -18,9 +17,8 @@ class Embed extends Component {
 
     return (
       <EmbedContainer>
-        <iframe
+        <EmbedComponent
           title={`iframe-${src}`}
-          width="100%"
           allowFullScreen={true}
           frameBorder="0"
           border="0"

@@ -6,14 +6,13 @@ export const EmbedContainer = styled.div`
   margin-bottom: 32px;
   display: flex;
   justify-content: center;
-`;
-
-export const AspectRatio = styled(EmbedContainer)`
-  padding-bottom: ${props => (props.ratio ? props.ratio : '0')};
+  padding-bottom: 56.25%;
 `;
 
 export const EmbedComponent = styled.iframe`
   position: absolute;
+  top: 0; 
+  left: 0;
   height: 100%;
   width: 100%;
 `;
