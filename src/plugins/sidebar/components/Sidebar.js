@@ -27,13 +27,15 @@ type ToolbarPosition = {
 
 type State = {
   position: ?ToolbarPosition,
-  inserting: boolean
+  inserting: boolean,
+  embedding: boolean
 };
 
 class Sidebar extends React.Component<Props, State> {
   state = {
     show: false,
     inserting: false,
+    embedding: false,
     position: {}
   }
 
@@ -86,24 +88,11 @@ class Sidebar extends React.Component<Props, State> {
   }
 
   toggleSidebar = () => {
-    this.setState({ inserting: !this.state.inserting })
+    this.setState({
+      inserting: !this.state.inserting,
+      embedding: false
+    })
   }
-
-  closeSidebar = () => {
-    if (this.state.inserting) {
-      this.setState({ inserting: false })
-    }
-  }
-
-  addImages = (files: FileList) => {
-    const { addImage } = this.state;
-    const { state, onChange } = this.props;
-    // Add images to editorState
-    // eslint-disable-next-line
-    for (var i = 0, file; (file = files[i]); i++) {
-      onChange(addImage(state, window.URL.createObjectURL(file), { file }));
-    }
-  };
 
   addImage = (e) => {
     this.addImages(e.target.files)
@@ -120,8 +109,13 @@ class Sidebar extends React.Component<Props, State> {
 
   closeSidebar = () => {
     this.setState({
-      inserting: false
+      inserting: false,
+      embedding: false
     })
+  }
+
+  toggleEmbedding = () => {
+
   }
 
   render () {
@@ -149,6 +143,15 @@ class Sidebar extends React.Component<Props, State> {
                 tipLocation={'bottom'}
                 getEditorState={store.getItem('getEditorState')}
                 setEditorState={store.getItem('setEditorState')}
+                size={32}
+              />
+            </Action>
+            <Action>
+              <IconButton
+                glyph={'embed'}
+                onClick={this.toggleEmbedding}
+                tipText='嵌入视频或网站内容'
+                tipLocation={'bottom'}
                 size={32}
               />
             </Action>
