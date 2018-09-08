@@ -14,6 +14,16 @@ class EmbedInputComponent extends Component {
     this.setState({url: e.target.value})
   }
 
+  onKeyDown = (event) => {
+    const { onSubmit } = this.props
+    const { url } = this.state
+
+    if (event.key === 'Enter') {
+      event.preventDefault()
+      onSubmit(url)
+    }
+  }
+
   render() {
     const { onSubmit } = this.props
     const { url } = this.state
@@ -24,6 +34,7 @@ class EmbedInputComponent extends Component {
           autoFocus
           type="text"
           onChange={this.onChange}
+          onKeyDown={this.onKeyDown}
           placeholder="输入网站提供的嵌入地址"
         />
         <IconButton
