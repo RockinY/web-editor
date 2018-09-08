@@ -59,7 +59,10 @@ const codePlugin = createCodeEditorPlugin()
 
 /* Markdown */
 import createMarkdownPlugin from 'draft-js-markdown-plugin'
-const markdownPlugin = createMarkdownPlugin()
+import { renderLanguageSelect } from './LanguageSelect'
+const markdownPlugin = createMarkdownPlugin({
+  renderLanguageSelect
+})
 
 /* Embed */
 import createEmbedPlugin from '../plugins/embed'
