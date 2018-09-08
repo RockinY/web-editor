@@ -86,9 +86,6 @@ export const EmbedInput = styled.input`
   height: 32px;
   width: 200px;
   font-size: 16px;
-  color: #57D9A3;
-
-  &::placeholder {
-    color: #A3AFBF;
-  }
+  color: #A3AFBF;
+  border-bottom: 1px solid #A3AFBF;
 `
