@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PluginEditor, { composeDecorators } from 'draft-js-plugins-editor'
+import addImageFn from '../plugins/image/addImage'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-scala';
@@ -17,9 +18,14 @@ import 'prismjs/components/prism-swift';
 import createFocusPlugin from 'draft-js-focus-plugin';
 const focusPlugin = createFocusPlugin()
 
+/* DnD */
+import createBlockDndPlugin from 'draft-js-drag-n-drop-plugin';
+const dndPlugin = createBlockDndPlugin();
+
 /* Decorators */
 const decorator = composeDecorators(
-  focusPlugin.decorator
+  focusPlugin.decorator,
+  dndPlugin.decorator
 );
 
 /* Linkify */
@@ -101,6 +107,14 @@ class Editor extends Component {
     this.props.onChange(editorState)
   }
 
+  handleDroppedFiles = (selection, files) => {
+    const { editorState, onChange } = this.props
+    // Add images to editorState
+    for (var i = 0, file; (file = files[i]); i++) {
+      onChange(addImageFn(editorState, window.URL.createObjectURL(file), { file }));
+    }
+  };
+
   render () {
     return (
       <div className='draftjs-web-editor'>
@@ -108,6 +122,7 @@ class Editor extends Component {
           editorState={this.props.editorState}
           onChange={this.onChange}
           customStyleMap={colorStyleMap}
+          handleDroppedFiles={this.handleDroppedFiles}
           plugins={plugins}
           ref={this.editor.current}
         />
