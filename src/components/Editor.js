@@ -69,8 +69,13 @@ const embedPlugin = createEmbedPlugin()
 import createDividerPlugin from '../plugins/divider'
 const dividerPlugin = createDividerPlugin()
 
+/* Link */
+import createLinkPlugin from '../plugins/link'
+const linkPlugin = createLinkPlugin()
+
 /* All plugins */
 const plugins = [
+  linkPlugin,
   linkifyPlugin,
   sidebarPlugin,
   imagePlugin,

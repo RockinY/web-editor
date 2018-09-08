@@ -6,9 +6,13 @@ export default {
       type: 'unstyled',
       depth: 0,
       inlineStyleRanges: [],
-      entityRanges: [],
+      entityRanges: [
+        {offset: 6, length: 5, key: 0}
+      ],
       data: {}
     }
   ],
-  entityMap: {}
+  entityMap: {
+    0: { type: "LINK", mutability: "MUTABLE", data: {url: "https://dev.krae.cn"}}
+  }
 }
