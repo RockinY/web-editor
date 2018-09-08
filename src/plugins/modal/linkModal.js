@@ -93,10 +93,16 @@ class Link extends Component {
         />
         <IconButton 
           glyph='ok'
+          onClick={this.onSubmit}
+          tipText="确认"
+          tipLocation="top"
           size={24}
         />
         <IconButton 
           glyph='cancel'
+          onClick={this.onCancel}
+          tipText="取消"
+          tipLocation="top"
           size={24}
         />
       </ToolbarWrapper>
