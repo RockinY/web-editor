@@ -22,6 +22,6 @@ export const EntryWrapper = styled.div`
   width: 200px;
 `
 
-export SuggestionWrapper = styled.div`
+export const SuggestionWrapper = styled.div`
   border-radius: 5px;
 `

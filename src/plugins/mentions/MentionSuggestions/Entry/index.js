@@ -5,7 +5,7 @@ import EntryComponent from './defaultEntryComponent'
 type Props = {
   entryComponent: any,
   searchValue: string,
-  onMentionSelect: function
+  onMentionSelect: Function
 }
 
 export default class Entry extends Component<Props> {

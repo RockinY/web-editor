@@ -17,7 +17,7 @@ export default class Demo extends Component {
     console.log(toJSON(editorState))
   }
 
-  mentionSearchAsync = (value) => {
+  mentionSearchAsync = (searchValue) => {
     return new Promise(
       (resolve, reject) => {
         let url = `https://api.github.com/search/users?q=${searchValue}`
