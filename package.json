@@ -30,6 +30,7 @@
     "draft-js-markdown-plugin": "^3.0.4",
     "draft-js-plugins-editor": "^2.1.1",
     "draft-js-prism": "^1.0.6",
+    "immutable": "^3.8.2",
     "linkify-it": "^2.0.3",
     "lodash": "^4.17.10",
     "prismjs": "^1.15.0",
