@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PluginEditor, { composeDecorators } from 'draft-js-plugins-editor'
 import addImageFn from '../plugins/image/addImage'
+import { fromJS } from 'immutable'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-scala';
@@ -82,6 +83,11 @@ const dividerPlugin = createDividerPlugin()
 import createLinkPlugin from '../plugins/link'
 const linkPlugin = createLinkPlugin()
 
+/* Mention */
+import createMentionPlugin, { defaultSuggestionFilter } from '../plugins/mentions'
+const mentionPlugin = createMentionPlugin()
+const { MentionSuggestions } = mentionPlugin
+
 /* All plugins */
 const plugins = [
   linkPlugin,
@@ -94,13 +100,26 @@ const plugins = [
   markdownPlugin,
   focusPlugin,
   embedPlugin,
-  dividerPlugin
+  dividerPlugin,
+  mentionPlugin
 ]
 
-class Editor extends Component {
+type Props = {
+  mentionSearchAsync: Function,
+  editorState: any
+}
+
+type State = {
+  suggestions: Array<Object>
+}
+
+class Editor extends Component<Props, State> {
   constructor(props) {
     super(props)
     this.editor = React.createRef()
+    this.state = {
+      suggestions: fromJS([])
+    }
   }
 
   onChange = (editorState) => {
@@ -114,6 +133,14 @@ class Editor extends Component {
       onChange(addImageFn(editorState, window.URL.createObjectURL(file), { file }));
     }
   };
+
+  onSearchChange = ({ value }) => {
+    const { mentionSearchAsync } = this.props
+    if (mentionSearchAsync) {
+      this.props.mentionSearchAsync(value)
+        .then((data) => { this.setState({suggestions: fromJS(data.suggestions)}) })
+    }
+  }
 
   render () {
     return (
@@ -131,6 +158,11 @@ class Editor extends Component {
           editorState={this.props.editorState}
         />
         <Toolbar />
+        <MentionSuggestions
+          onSearchChange={this.onSearchChange}
+          suggestions={this.state.suggestions}
+          onClose={() => this.setState({suggestions: fromJS([])})}
+        />
       </div>
     )
   }
