@@ -49,7 +49,6 @@ const positionSuggestions = ({ decoratorRect, popover, state, props }) => {
     left: `${left}px`,
     top: `${top}px`,
     transform,
-    transformOrigin: '1em 0%',
     transition,
   };
 };

@@ -71,8 +71,9 @@ export class MentionSuggestions extends Component<Props, State> {
         state: this.state,
         popover: this.popover,
       });
+
       Object.keys(newStyles).forEach((key) => {
-        this.popover.attrs[key] = newStyles[key];
+        this.popover.style[key] = newStyles[key];
       });
     }
   };
@@ -313,7 +314,7 @@ export class MentionSuggestions extends Component<Props, State> {
       <SuggestionWrapper
         role='listbox'
         id={`mentions-list-${this.key}`}
-        ref={(element) => { this.popover = element }}
+        innerRef={(element) => { this.popover = element }}
       >
         {
           this.props.suggestions.map((mention, index) => (
