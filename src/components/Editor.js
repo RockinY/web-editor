@@ -118,7 +118,7 @@ class Editor extends Component<Props, State> {
     super(props)
     this.editor = React.createRef()
     this.state = {
-      suggestions: fromJS([])
+      suggestions: []
     }
   }
 
@@ -138,7 +138,7 @@ class Editor extends Component<Props, State> {
     const { mentionSearchAsync } = this.props
     if (mentionSearchAsync) {
       this.props.mentionSearchAsync(value)
-        .then((data) => { this.setState({suggestions: fromJS(data.suggestions)}) })
+        .then((data) => { this.setState({suggestions: data.suggestions}) })
     }
   }
 

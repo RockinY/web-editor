@@ -4,7 +4,7 @@
   "description": "Cool draftjs editor for the web",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src/ -d lib/",
+    "build": "rm -rf ./lib && babel src/ -d lib/",
     "dev": "yarn link && cd demo && yarn link draftjs-web-editor && yarn start"
   },
   "keywords": [

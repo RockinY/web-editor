@@ -18,13 +18,15 @@ type Props = {
 
 type State = {
   isActive: boolean,
-  focusedOptionIndex: number
+  focusedOptionIndex: number,
+  styles: Object
 }
 
 export class MentionSuggestions extends Component<Props, State> {
   state = {
     isActive: false,
     focusedOptionIndex: 0,
+    styles: {}
   };
 
   componentWillMount() {
@@ -70,7 +72,7 @@ export class MentionSuggestions extends Component<Props, State> {
         popover: this.popover,
       });
       Object.keys(newStyles).forEach((key) => {
-        this.popover.style[key] = newStyles[key];
+        this.popover.attrs[key] = newStyles[key];
       });
     }
   };
