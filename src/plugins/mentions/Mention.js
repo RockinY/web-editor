@@ -11,7 +11,7 @@ const Mention = (props) => {
       target='_blank'
       href={mention.link}
     >
-      {children}
+      @{children}
     </MentionLink>
   )
 }
