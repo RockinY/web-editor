@@ -25,7 +25,7 @@ export default class Demo extends Component {
           fetch(url)
           .then( (response) => { return response.json() })
           .then((data) => {
-            let users = data.items.map( (u, i) => { return { name: u.login, link: u.html_url, avatar: u.avatar_url } })
+            let users = data.items.slice(0, 5).map( (u, i) => { return { name: u.login, link: u.html_url, avatar: u.avatar_url } })
             resolve({ suggestions: users })
           })
           .catch(() => {

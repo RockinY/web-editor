@@ -6,10 +6,10 @@ import {
 } from './styles'
 
 const defaultEntryComponent = (props) => {
-  const { mention } = props;
+  const { mention, isFocused } = props;
 
   return (
-    <EntryWrapper>
+    <EntryWrapper isFocused={isFocused}>
       <Avatar
         src={mention.avatar}
         role="presentation"

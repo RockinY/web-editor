@@ -3,26 +3,38 @@ import styled from 'styled-components'
 export const Avatar = styled.img`
   width: 24px;
   height: 24px;
-  object-fit: cover;
   border-radius: 50%;
+  margin-right: 5px;
 `
 
 export const EntryText = styled.span`
   color: #FFF;
   font-size: 16px;
+  white-space: nowrap; 
+  overflow: hidden;
   text-overflow: ellipsis;
-  width: 150px;
+  width: 116px;
 `
 
 export const EntryWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 2px 5px;
-  background: #36B37E;
-  width: 200px;
+  padding: 5px 5px;
+  width: 150px;
+  background: ${props => props.isFocused ? '#172B4D' : '#36B37E' };
+
+  &:hover {
+    background: #172B4D;
+  }
 `
 
 export const SuggestionWrapper = styled.div`
   border-radius: 5px;
+  padding: 5px 0;
+  margin-top: 5px;
   position: absolute;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background: #36B37E;
 `

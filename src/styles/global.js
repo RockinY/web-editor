@@ -135,7 +135,6 @@ injectGlobal`
   .draftjs-web-editor img {
     max-width: 100%;
     display: inline;
-    border-radius: 4px;
     transition: box-shadow 0.2s;
     display: block;
   }
