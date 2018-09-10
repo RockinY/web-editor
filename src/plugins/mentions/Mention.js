@@ -2,7 +2,7 @@ import React from 'react'
 import { MentionLink } from './styles'
 
 const Mention = (props) => {
-  const { entityKey, contentState, children } = this.props
+  const { entityKey, contentState, children } = props
 
   const mention = contentState.getEntity(entityKey).getData().mention
 
@@ -15,3 +15,5 @@ const Mention = (props) => {
     </MentionLink>
   )
 }
+
+export default Mention
