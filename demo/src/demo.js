@@ -42,11 +42,13 @@ export default class Demo extends Component {
 
   render() {
     return (
-      <Editor
-        editorState={this.state.editorState}
-        onChange={this.onChange}
-        mentionSearchAsync={this.mentionSearchAsync}
-      />
+      <React.Fragment>
+        <Editor
+          editorState={this.state.editorState}
+          onChange={this.onChange}
+          mentionSearchAsync={this.mentionSearchAsync}
+        />
+      </React.Fragment>
     )
   }
 }

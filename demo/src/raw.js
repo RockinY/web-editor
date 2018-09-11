@@ -16,3 +16,4 @@ export default {
     0: { type: "LINK", mutability: "MUTABLE", data: {url: "https://dev.krae.cn"}}
   }
 }
+

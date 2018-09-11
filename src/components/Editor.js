@@ -143,19 +143,21 @@ class Editor extends Component<Props, State> {
   }
 
   render () {
+    const { editorState, mentionSearchAsync, onChange, ...restProps } = this.props
     return (
       <div className='draftjs-web-editor'>
         <PluginEditor
-          editorState={this.props.editorState}
+          editorState={editorState}
           onChange={this.onChange}
           customStyleMap={colorStyleMap}
           handleDroppedFiles={this.handleDroppedFiles}
           plugins={plugins}
           ref={this.editor.current}
+          {...restProps}
         />
         <Sidebar
           onChange={this.onChange}
-          editorState={this.props.editorState}
+          editorState={editorState}
         />
         <Toolbar />
         <MentionSuggestions
