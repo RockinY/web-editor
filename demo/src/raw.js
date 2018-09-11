@@ -64,7 +64,42 @@ export default {
       "data": {}
     },
     {
-      "key": "eqe1l",
+      "key": "3vtl3",
+      "text": "def plus(a, b)\n  a + b\nend\n# Function plus",
+      "type": "code-block",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {
+        "language": "ruby"
+      }
+    },
+    {
+      "key": "5nkks",
+      "text": "",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "5foo",
+      "text": " ",
+      "type": "atomic",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 1
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "eeurm",
       "text": "",
       "type": "unstyled",
       "depth": 0,
@@ -88,6 +123,13 @@ export default {
       "mutability": "MUTABLE",
       "data": {
         "url": "https://github.com/BranLiang"
+      }
+    },
+    "1": {
+      "type": "IMAGE",
+      "mutability": "IMMUTABLE",
+      "data": {
+        "src": "http://www.jd-tv.com/uploads/allimg/171110/33-1G1100AR02H.JPEG"
       }
     }
   }
