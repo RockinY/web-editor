@@ -114,6 +114,7 @@ injectGlobal`
     font-size: 16px;
     line-height: 24px;
     color: #16171a;
+    position: relative;
   }
 
   .draftjs-web-editor p {

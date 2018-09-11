@@ -85,7 +85,7 @@ class Sidebar extends React.Component<Props, State> {
         show,
         position: {
           top: node.offsetTop + editorRoot.offsetTop,
-          left: node.offsetLeft + 18
+          left: node.offsetLeft - 42
         }
       })
     }, 0)

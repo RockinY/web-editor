@@ -6,8 +6,8 @@ export const SidebarWrapper = styled.div`
   transform: scale(${props => props.show ? '1' : '0'});
   opacity: ${props => props.show ? 1 : 0};
   transition: transform 0.1s;
-  position: fixed;
-  margin-top: -8px;
+  position: absolute;
+  margin-top: -10px;
   z-index: 2000;
 `
 
