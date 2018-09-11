@@ -22,10 +22,6 @@ export const EntryWrapper = styled.div`
   padding: 5px 5px;
   width: 150px;
   background: ${props => props.isFocused ? '#172B4D' : '#36B37E' };
-
-  &:hover {
-    background: #172B4D;
-  }
 `
 
 export const SuggestionWrapper = styled.div`
@@ -37,4 +33,5 @@ export const SuggestionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background: #36B37E;
+  box-shadow: 0px 4px 30px 0px rgba(220,220,220,1);
 `

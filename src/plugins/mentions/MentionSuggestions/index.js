@@ -8,6 +8,7 @@ import decodeOffsetKey from '../utils/decodeOffsetKey';
 import getSearchText from '../utils/getSearchText';
 import defaultEntryComponent from './Entry/defaultEntryComponent';
 import { SuggestionWrapper } from './Entry/styles'
+import OutsideClickHandler from '../../../components/OutsideClickHandler'
 
 type Props = {
   entityMutability: 'SEGMENTED' | 'IMMUTABLE' | 'MUTABLE',
@@ -101,8 +102,8 @@ export class MentionSuggestions extends Component<Props, State> {
     const anchorKey = selection.getAnchorKey();
     const anchorOffset = selection.getAnchorOffset();
 
-    // the list should not be visible if a range is selected or the editor has no focus
-    if (!selection.isCollapsed() || !selection.getHasFocus()) return removeList();
+    // the list should not be visible if a range is selected
+    if (!selection.isCollapsed()) return removeList();
 
     // identify the start & end positon of each search-text
     const offsetDetails = searches.map((offsetKey) => decodeOffsetKey(offsetKey));
@@ -311,26 +312,28 @@ export class MentionSuggestions extends Component<Props, State> {
     }
 
     return (
-      <SuggestionWrapper
-        role='listbox'
-        id={`mentions-list-${this.key}`}
-        innerRef={(element) => { this.popover = element }}
-      >
-        {
-          this.props.suggestions.map((mention, index) => (
-            <Entry
-              key={mention.id != null ? mention.id : mention.name}
-              onMentionSelect={this.onMentionSelect}
-              onMentionFocus={this.onMentionFocus}
-              isFocused={this.state.focusedOptionIndex === index}
-              mention={mention}
-              index={index}
-              id={`mention-option-${this.key}-${index}`}
-              searchValue={this.lastSearchValue}
-            />
-          ))
-        }
-      </SuggestionWrapper>
+      <OutsideClickHandler onOutsideClick={this.closeDropdown}>
+        <SuggestionWrapper
+          role='listbox'
+          id={`mentions-list-${this.key}`}
+          innerRef={(element) => { this.popover = element }}
+        >
+          {
+            this.props.suggestions.map((mention, index) => (
+              <Entry
+                key={mention.id != null ? mention.id : mention.name}
+                onMentionSelect={this.onMentionSelect}
+                onMentionFocus={this.onMentionFocus}
+                isFocused={this.state.focusedOptionIndex === index}
+                mention={mention}
+                index={index}
+                id={`mention-option-${this.key}-${index}`}
+                searchValue={this.lastSearchValue}
+              />
+            ))
+          }
+        </SuggestionWrapper>
+      </OutsideClickHandler>
     )
   }
 }
