@@ -79,6 +79,30 @@ export default {
       "data": {}
     },
     {
+      "key": "cjojb",
+      "text": " ",
+      "type": "atomic",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 2
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "7po6l",
+      "text": "",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
       "key": "3vtl3",
       "text": "def plus(a, b)\n  a + b\nend\n# Function plus",
       "type": "code-block",
@@ -108,7 +132,7 @@ export default {
         {
           "offset": 0,
           "length": 1,
-          "key": 2
+          "key": 3
         }
       ],
       "data": {}
@@ -152,6 +176,11 @@ export default {
       }
     },
     "2": {
+      "type": "divider",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "3": {
       "type": "IMAGE",
       "mutability": "IMMUTABLE",
       "data": {
