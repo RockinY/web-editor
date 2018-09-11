@@ -25,11 +25,13 @@ class Toolbar extends Component {
   onVisibilityChanged = (isVisible) => {
     const toolbarHeightOffset = 42
     const selectionRect = isVisible ? getVisibleSelectionRect(window) : undefined
+    const editorNode = document.getElementsByClassName("draftjs-web-editor")[0]
+    const ecitorPosition = editorNode.getBoundingClientRect()
 
     if (selectionRect === undefined || selectionRect === null) return
 
-    const top = (selectionRect.top === undefined) ? 0 : (selectionRect.top + window.scrollY) - toolbarHeightOffset
-    const left = (selectionRect.left === undefined) ? 0 : selectionRect.left + window.scrollX + (selectionRect.width / 2)
+    const top = (selectionRect.top === undefined) ? 0 : (selectionRect.top - ecitorPosition.top) - toolbarHeightOffset
+    const left = (selectionRect.left === undefined) ? 0 : selectionRect.left - ecitorPosition.left + (selectionRect.width / 2)
     const position = { top, left }
     this.setState({position})
   }
