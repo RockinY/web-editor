@@ -2,6 +2,9 @@
 import escapeRegExp from 'lodash.escaperegexp';
 
 const findWithRegex = (regex, contentBlock, callback) => {
+  // This prevents the search for mentions when we're inside of a code-block
+  if (contentBlock.type === 'code-block') return;
+  
   const contentBlockText = contentBlock.getText();
 
   // exclude entities, when matching
