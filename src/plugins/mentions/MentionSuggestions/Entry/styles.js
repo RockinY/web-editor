@@ -34,4 +34,5 @@ export const SuggestionWrapper = styled.div`
   flex-direction: column;
   background: #36B37E;
   box-shadow: 0px 4px 30px 0px rgba(220,220,220,1);
+  z-index: 5000;
 `

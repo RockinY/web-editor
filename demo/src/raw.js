@@ -64,6 +64,21 @@ export default {
       "data": {}
     },
     {
+      "key": "bcb04",
+      "text": "Some mentions, BranLiang ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 15,
+          "length": 9,
+          "key": 1
+        }
+      ],
+      "data": {}
+    },
+    {
       "key": "3vtl3",
       "text": "def plus(a, b)\n  a + b\nend\n# Function plus",
       "type": "code-block",
@@ -93,7 +108,7 @@ export default {
         {
           "offset": 0,
           "length": 1,
-          "key": 1
+          "key": 2
         }
       ],
       "data": {}
@@ -126,6 +141,17 @@ export default {
       }
     },
     "1": {
+      "type": "mention",
+      "mutability": "SEGMENTED",
+      "data": {
+        "mention": {
+          "name": "BranLiang",
+          "link": "https://github.com/BranLiang",
+          "avatar": "https://avatars1.githubusercontent.com/u/6628202?v=4"
+        }
+      }
+    },
+    "2": {
       "type": "IMAGE",
       "mutability": "IMMUTABLE",
       "data": {
