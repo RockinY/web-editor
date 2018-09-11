@@ -4,6 +4,7 @@ import {
   ToolbarWrapper
 } from './styles'
 import OutsideClickHandler from '../../../components/OutsideClickHandler'
+import { RichUtils } from 'draft-js'
 
 class Toolbar extends Component {
   state = {
@@ -53,7 +54,7 @@ class Toolbar extends Component {
     let editorState = getEditorState()
 
     let show = true
-    if (!editorState.getSelection().getHasFocus() || editorState.getSelection().isCollapsed()) {
+    if (!editorState.getSelection().getHasFocus() || editorState.getSelection().isCollapsed() || RichUtils.getCurrentBlockType(editorState) === 'code-block') {
       show = false
     }
 

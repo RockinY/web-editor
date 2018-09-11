@@ -38,6 +38,7 @@ export default (config = {}) => {
     },
     onChange: (editorState) => {
       const selection = editorState.getSelection()
+
       if (selection.getHasFocus() && !selection.isCollapsed()) {
         store.updateItem('isVisible', true)
       } else {
