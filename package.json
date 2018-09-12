@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf ./lib && babel src/ -d lib/",
-    "dev": "yarn link && cd demo && yarn link draftjs-web-editor && yarn start"
+    "dev": "yarn link && cd demo && yarn link draftjs-web-editor && yarn start",
+    "deploy": "cd ./demo && serve -s build"
   },
   "keywords": [
     "draft-js",
