@@ -47,6 +47,7 @@ export default class Demo extends Component {
           editorState={this.state.editorState}
           onChange={this.onChange}
           mentionSearchAsync={this.mentionSearchAsync}
+          readOnly={this.props.readOnly}
         />
       </React.Fragment>
     )
