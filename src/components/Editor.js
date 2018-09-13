@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PluginEditor, { composeDecorators } from 'draft-js-plugins-editor'
 import addImageFn from '../plugins/image/addImage'
-import { fromJS } from 'immutable'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-scala';
@@ -163,7 +162,7 @@ class Editor extends Component<Props, State> {
         <MentionSuggestions
           onSearchChange={this.onSearchChange}
           suggestions={this.state.suggestions}
-          onClose={() => this.setState({suggestions: fromJS([])})}
+          onClose={() => this.setState({suggestions: []})}
         />
       </div>
     )
